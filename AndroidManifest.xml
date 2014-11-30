@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="de.vogella.android.widget.example"
+    package="com.altran"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -10,9 +10,9 @@
         android:icon="@drawable/icon"
         android:label="@string/app_name" >
         <receiver
-            android:name=".MyWidgetProvider"
+            android:name="com.altran.MyWidgetProvider"
             android:icon="@drawable/icon"
-            android:label="Simple Example Widget" >
+            android:label="a Stigs Widget" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -21,7 +21,17 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widgetsimple_info" />
         </receiver>
+        <receiver android:name=".AlarmManagerHelper" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
         <service android:name=".UpdateWidgetService"/>
+        <service android:name=".AlarmService" android:enabled="true"/>
     </application>
+
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
 
 </manifest>

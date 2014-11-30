@@ -1,4 +1,4 @@
-package de.vogella.android.widget.example;
+package com.altran;
 
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
@@ -17,8 +17,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
 
         Log.w(LOG, "onUpdate method called");
         // Get all ids
-        ComponentName thisWidget = new ComponentName(context,
-                MyWidgetProvider.class);
+        ComponentName thisWidget = new ComponentName(context, MyWidgetProvider.class);
         int[] allWidgetIds = appWidgetManager.getAppWidgetIds(thisWidget);
 
         // Build the intent to call the service

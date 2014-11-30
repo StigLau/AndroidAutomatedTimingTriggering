@@ -1,7 +1,6 @@
-package de.vogella.android.widget.example;
+package com.altran;
 
 import java.util.Random;
-
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;

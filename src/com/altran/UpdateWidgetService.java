@@ -1,7 +1,6 @@
-package de.vogella.android.widget.example;
+package com.altran;
 
 import java.util.Random;
-
 import android.app.PendingIntent;
 import android.app.Service;
 import android.appwidget.AppWidgetManager;
@@ -18,6 +17,9 @@ public class UpdateWidgetService extends Service {
     public void onStart(Intent intent, int startId) {
         Log.i(LOG, "Called");
         // create some random data
+
+        Log.i("Hello", "Set up alarm!");
+        AlarmManagerHelper.setAlarms(this);
 
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this
                 .getApplicationContext());
